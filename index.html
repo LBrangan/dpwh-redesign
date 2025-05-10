@@ -8,172 +8,257 @@
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <!-- Skip to content link for accessibility -->
-  <a href="#maincontent" class="skip-link">Skip to main content</a>
+  <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#maincontent" class="skip-link">Skip to main content</a>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
-    <div class="container">
-      <a class="navbar-brand" href="#">DPWH</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-        
-      </div>
-    </div>
-  </nav>
-
- 
-  <!-- Hero Section -->
-  <main id="maincontent">
-    <section class="hero">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
       <div class="container">
-   
-      
-        <h1 class="display-4">Welcome to the Department of Public Works and Highways</h1>
-        <p class="lead">Providing quality infrastructure and public services for the Filipino people.</p>
-      </div>
-    </section>
-
-     <!--Header-->
-  <header class="header">
-    <div class="container">
-      <div class="row py-5">
-        <div class="col-md-2">
-          <img src="images/DPWH-Logo.png" height="150px" alt="" class="d-inline-block">
+        <a class="navbar-brand" href="#">DPWH</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
-        <div class="col-md-10 pt-3">
-          <h6>REPUBLIC OF THE PHILIPPINES</h6>
-         <hr>
-          <h5 >
-            DEPARMENT OF PUBLIC WORKS AND HIGHWAYS
-          </h5>
-          <p class="fw-semibold fst-italic">RIGHT PROJECT, RIGHT COST, RIGHT QUALITY, RIGHT ON TIME, RIGHT PEOPLE</p>
-      
-        </div>
       </div>
-    </div>
-  </header>
+    </nav>
 
-    <!-- News Carousel -->
-    <section class="py-5" id="news">
+    <!-- Hero Section -->
+    <main id="maincontent">
+      <section class="hero">
+        <div class="container">
+          <h1 class="display-4">
+            Welcome to the Department of Public Works and Highways
+          </h1>
+          <p class="lead">
+            Providing quality infrastructure and public services for the
+            Filipino people.
+          </p>
+        </div>
+      </section>
+
+      <!--Header-->
+      <header class="header">
+        <div class="container">
+          <div class="row py-5">
+            <!-- Logo -->
+            <div class="col-md-2 col-12 text-center text-md-start mb-3 mb-md-0">
+              <img
+                src="images/DPWH-Logo.png"
+                alt="DPWH Logo"
+                class="img-fluid"
+                style="height: 100x"
+              />
+            </div>
+            <div class="col-md-8 col-12 text-center text-md-start mb-3 mb-md-0">
+              <h6>REPUBLIC OF THE PHILIPPINES</h6>
+              <hr />
+              <h5>DEPARMENT OF PUBLIC WORKS AND HIGHWAYS</h5>
+              <p class="fw-semibold fst-italic">
+                RIGHT PROJECT, RIGHT COST, RIGHT QUALITY, RIGHT ON TIME, RIGHT
+                PEOPLE
+              </p>
+            </div>
+            <div class="col-md-2 col-12 text-center">
+              <img
+                src="images/Mr. Bonoan.jpg"
+                alt="Manuel M. Bonoan"
+                class="img-fluid rounded border-5 shadow mx-auto d-block mb-2"
+                style="height: 200px"
+              />
+              <h5><strong>Manuel M. Bonoan</strong></h5>
+              <p><b>Secretary</b></p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- News Carousel -->
+      <section class="py-5" id="news">
+        <div class="container">
+          <h2 class="section-title">Latest News</h2>
+          <div
+            id="newsCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+            aria-label="News carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="images/infrastructure.jpg"
+                  class="d-block w-100"
+                  alt="News 1: Infrastructure Initiative"
+                />
+                <div class="carousel-caption">
+                  <h5>DPWH Launches New Infrastructure Initiative</h5>
+                  <p>Enhancing road connectivity across the country.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="images/flood.jpg"
+                  class="d-block w-100"
+                  alt="News 2: Flood Mitigation"
+                />
+                <div class="carousel-caption">
+                  <h5>Flood Mitigation Projects Underway</h5>
+                  <p>Improving disaster preparedness and resilience.</p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#newsCarousel"
+              data-bs-slide="prev"
+              aria-label="Previous slide"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#newsCarousel"
+              data-bs-slide="next"
+              aria-label="Next slide"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="py-5 bg-light services" id="services">
+        <div class="container">
+          <h2 class="section-title">Our Services</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100" tabindex="0" style="width: 25rem">
+                <img src="images/image1.jpg" class="card-img-top" alt="" />
+                <div class="card-body">
+                  <h5 class="card-title">Infrastructure Development</h5>
+                  <p class="card-text">
+                    Planning and execution of road, bridge, and public building
+                    projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100" tabindex="0" style="width: 25rem">
+                <img src="images/image2.jpg" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">Maintenance & Rehabilitation</h5>
+                  <p class="card-text">
+                    Ensuring safe and durable infrastructure through routine
+                    maintenance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100" tabindex="0" style="width: 25rem">
+                <img src="images/image3.png" class="card-img-top" alt="" />
+                <div class="card-body">
+                  <h5 class="card-title">Public Assistance</h5>
+                  <p class="card-text">
+                    Addressing public concerns and infrastructure-related
+                    inquiries.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="py-5" id="projects">
+        <div class="container">
+          <h2 class="section-title">Recent Projects</h2>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card" tabindex="0">
+                <img
+                  src="images/rehabilitation.jpg"
+                  class="card-img-top"
+                  alt="Bridge Rehabilitation Project"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Bridge Rehabilitation in Northern Luzon
+                  </h5>
+                  <p class="card-text">
+                    Improving connectivity and safety for remote communities.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card" tabindex="0">
+                <img
+                  src="images/flood-control.jpg"
+                  class="card-img-top"
+                  alt="Flood Control Project"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Flood Control in Metro Manila</h5>
+                  <p class="card-text">
+                    Preventing damage and improving disaster resilience.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center">
       <div class="container">
-        <h2 class="section-title">Latest News</h2>
-        <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" aria-label="News carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="images/infrastructure.jpg" class="d-block w-100" alt="News 1: Infrastructure Initiative">
-              <div class="carousel-caption">
-                <h5>DPWH Launches New Infrastructure Initiative</h5>
-                <p>Enhancing road connectivity across the country.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="images/flood.jpg" class="d-block w-100" alt="News 2: Flood Mitigation">
-              <div class="carousel-caption">
-                <h5>Flood Mitigation Projects Underway</h5>
-                <p>Improving disaster preparedness and resilience.</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev" aria-label="Previous slide">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next" aria-label="Next slide">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+        <p class="mb-1">&copy; 2025 Department of Public Works and Highways</p>
+        <a href="#" class="text-white me-3" style="text-decoration: none"
+          >Privacy Policy</a
+        >
+        <a href="#" class="text-white" style="text-decoration: none"
+          >Accessibility</a
+        >
       </div>
-    </section>
+    </footer>
 
-    <!-- Services Section -->
-    <section class="py-5 bg-light services" id="services">
-      <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100" tabindex="0" style="width: 25rem;">
-              <img src="images/image1.jpg" class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title">Infrastructure Development</h5>
-                <p class="card-text">Planning and execution of road, bridge, and public building projects.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100" tabindex="0" style="width: 25rem;">
-              <img src="images/image2.jpg" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Maintenance & Rehabilitation</h5>
-                <p class="card-text">Ensuring safe and durable infrastructure through routine maintenance.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100" tabindex="0" style="width: 25rem;">
-              <img src="images/image3.png" class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title">Public Assistance</h5>
-                <p class="card-text">Addressing public concerns and infrastructure-related inquiries.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="py-5" id="projects">
-      <div class="container">
-        <h2 class="section-title">Recent Projects</h2>
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="card" tabindex="0">
-              <img src="images/rehabilitation.jpg" class="card-img-top" alt="Bridge Rehabilitation Project">
-              <div class="card-body">
-                <h5 class="card-title">Bridge Rehabilitation in Northern Luzon</h5>
-                <p class="card-text">Improving connectivity and safety for remote communities.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card" tabindex="0">
-              <img src="images/flood-control.jpg" class="card-img-top" alt="Flood Control Project">
-              <div class="card-body">
-                <h5 class="card-title">Flood Control in Metro Manila</h5>
-                <p class="card-text">Preventing damage and improving disaster resilience.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4 text-center">
-    <div class="container">
-      <p class="mb-1">&copy; 2025 Department of Public Works and Highways</p>
-      <a href="#" class="text-white me-3">Privacy Policy</a>
-      <a href="#" class="text-white">Accessibility</a>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

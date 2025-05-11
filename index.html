@@ -6,7 +6,7 @@
     const setTheme = (theme) => {
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
-      themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+      themeIcon.textContent = theme === "dark" ? "🌙" : "☀️";
     };
 
     const initializeTheme = () => {
@@ -107,7 +107,7 @@
     <main id="maincontent">
       <section class="hero mt-5">
         <div class="container">
-          <h1 class="display-4">
+          <h1 class="display-5">
             Welcome to the Department of Public Works and Highways
           </h1>
           <p class="lead">
@@ -126,11 +126,11 @@
               <img
                 src="images/DPWH-Logo.png"
                 alt="DPWH Logo"
-                class="img-fluid"
-                style="height: 100x"
+                class="text-end"
+                style="height: 100px"
               />
             </div>
-            <div class="col-md-8 col-12 text-center text-md-start mb-3 mb-md-0">
+            <div class="col-md-5 col-12 text-center text-md-start mb-3 mb-md-0">
               <h6>REPUBLIC OF THE PHILIPPINES</h6>
               <hr />
               <h5>DEPARMENT OF PUBLIC WORKS AND HIGHWAYS</h5>
@@ -139,14 +139,16 @@
                 PEOPLE
               </p>
             </div>
-            <div class="col-md-2 col-12 text-center">
+            <div class="col-md-5 col-12 text-center">
               <img
                 src="images/Mr. Bonoan.jpg"
                 alt="Manuel M. Bonoan"
                 class="img-fluid rounded border-5 shadow mx-auto d-block mb-2"
                 style="height: 200px"
               />
-              <h5><strong>Manuel M. Bonoan</strong></h5>
+              <h5 class="fw-semibold fst-italic">
+                <strong>Manuel M. Bonoan</strong>
+              </h5>
               <p><b>Secretary</b></p>
             </div>
           </div>

@@ -1,3 +1,40 @@
+<script setup>
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = themeToggle.querySelector(".theme-icon");
+
+    const setTheme = (theme) => {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+      themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+    };
+
+    const initializeTheme = () => {
+      const savedTheme =
+        localStorage.getItem("theme") ??
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      setTheme(savedTheme);
+    };
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      setTheme(newTheme);
+    });
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        if (!localStorage.getItem("theme")) {
+          setTheme(event.matches ? "dark" : "light");
+        }
+      });
+
+    initializeTheme();
+  });
+</script>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
   <head>
@@ -65,8 +102,8 @@
     </nav>
 
     <main id="maincontent">
-      <section class="hero mt-5 pt-5">
-        <div class="container text-center">
+      <section class="hero mt-5">
+        <div class="container">
           <h1 class="display-4">
             Welcome to the Department of Public Works and Highways
           </h1>
@@ -83,31 +120,29 @@
             <div class="col-md-2 col-12 text-center text-md-start">
               <img
                 src="images/DPWH-Logo.png"
-                alt="Official Logo of the Department of Public Works and Highways"
+                alt="DPWH Logo"
                 class="img-fluid"
-                style="max-height: 100px"
+                style="height: 100x"
               />
             </div>
-            <div class="col-md-8 col-12 text-center text-md-start">
-              <h6 class="mb-1 text-uppercase">Republic of the Philippines</h6>
-              <hr class="my-2" />
-              <h5 class="mb-2 fw-bold text-uppercase">
-                Department of Public Works and Highways
-              </h5>
-              <p class="fw-semibold fst-italic mb-0">
-                Right Project, Right Cost, Right Quality, Right On Time, Right
-                People
+            <div class="col-md-8 col-12 text-center text-md-start mb-3 mb-md-0">
+              <h6>REPUBLIC OF THE PHILIPPINES</h6>
+              <hr />
+              <h5>DEPARMENT OF PUBLIC WORKS AND HIGHWAYS</h5>
+              <p class="fw-semibold fst-italic">
+                RIGHT PROJECT, RIGHT COST, RIGHT QUALITY, RIGHT ON TIME, RIGHT
+                PEOPLE
               </p>
             </div>
-            <div class="col-md-2 col-12 text-center">
+            <div class="col-md-5 col-12 text-center">
               <img
                 src="images/Mr. Bonoan.jpg"
                 alt="Portrait of Secretary Manuel M. Bonoan"
                 class="img-fluid rounded shadow mb-2"
                 style="max-height: 200px; object-fit: cover"
               />
-              <h6 class="mb-0 fw-bold">Manuel M. Bonoan</h6>
-              <p class="mb-0">Secretary</p>
+              <h5><strong>Manuel M. Bonoan</strong></h5>
+              <p><b>Secretary</b></p>
             </div>
           </div>
         </div>

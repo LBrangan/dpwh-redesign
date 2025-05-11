@@ -1,6 +1,6 @@
 :root {
   /* Light theme variables using modern CSS color syntax */
-  --primary-color: #003366;
+  --primary-color: #161179;
   --text-color: #212529;
   --bg-color: #ffffff;
   --card-bg: #ffffff;
@@ -16,14 +16,15 @@
 
 [data-theme="dark"] {
   /* Dark theme variables */
-  --primary-color: #4d94ff;
+  --primary-color: #161179;
   --text-color: #e9ecef;
   --bg-color: #121212;
-  --card-bg: #1e1e1e;
-  --section-bg: #2d2d2d;
+  --section-bg: #1a1a1a;
+  --card-bg: #252525;
   --footer-bg: #121212;
   --footer-text: #e9ecef;
   --border-color: #495057;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
@@ -34,7 +35,11 @@ body {
   color: var(--text-color);
   transition: var(--theme-transition);
 }
-
+h1,
+h2,
+.card-title {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
 .hero {
   background-color: var(--primary-color);
   color: white;
@@ -74,7 +79,25 @@ textarea:focus {
   outline: 3px solid #ffbf47;
   outline-offset: 2px;
 }
+.navbar a:hover,
+.navbar .nav-link:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
 
+.navbar button:hover,
+.navbar button:focus {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* Exclude theme icon from hover styling */
+.navbar .theme-toggle:hover,
+.navbar .theme-icon:hover {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
 .skip-link {
   position: absolute;
   top: -40px;
@@ -95,6 +118,8 @@ textarea:focus {
   color: var(--text-color);
   border-color: var(--border-color);
   transition: var(--theme-transition);
+  width: 100% !important;
+  max-width: 100%;
 }
 
 .bg-light {
@@ -107,27 +132,28 @@ textarea:focus {
   transition: var(--theme-transition);
 }
 
-/* Theme toggle button styles */
+/* Icon-only theme toggle button */
 .theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  color: inherit;
   cursor: pointer;
-  padding: 0.375rem 0.75rem;
-  border-radius: 20px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #fff;
 }
 
-.theme-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.theme-toggle:focus-visible {
+  outline: 2px dashed var(--primary-color);
+  outline-offset: 4px;
 }
 
 .theme-icon {
-  font-size: 1.2rem;
-  margin-right: 5px;
+  font-size: 1.5rem;
+  pointer-events: none;
 }
 
 .news-card {

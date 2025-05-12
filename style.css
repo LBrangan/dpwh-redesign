@@ -15,7 +15,7 @@
 }
 
 [data-theme="dark"] {
-  --primary-color: #161179;
+  --primary-color: #c5c4dd;
   --text-color: #e9ecef;
   --bg-color: #121212;
   --section-bg: #1a1a1a;
@@ -94,7 +94,7 @@ textarea:focus {
 
 .navbar button:hover,
 .navbar button:focus {
-  background-color: #0056b3;
+  background-color: #cad9e9;
   color: #fff;
 }
 
@@ -184,4 +184,30 @@ img {
   .header img {
     margin-bottom: 1rem;
   }
+}
+
+/* Carousel */
+.carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6); /* Better contrast */
+  padding: 1rem;
+  color: #fff;
+  text-align: left;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  outline: none;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  box-shadow: 0 0 0 4px #96afd4;
+}
+#carouselToggle:focus {
+  box-shadow: 0 0 0 3px #0d6efd;
 }

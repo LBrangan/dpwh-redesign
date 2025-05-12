@@ -14,8 +14,17 @@
     border-color 0.3s ease;
 }
 
+/* Temporarily disable transitions */
+html[data-theme] * {
+  transition: none !important;
+}
+
+html[data-theme].transition-enabled * {
+  transition: var(--theme-transition) !important;
+}
+
 [data-theme="dark"] {
-  --primary-color: #c5c4dd;
+  --primary-color: #15109b;
   --text-color: #e9ecef;
   --bg-color: #121212;
   --section-bg: #1a1a1a;

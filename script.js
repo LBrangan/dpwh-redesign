@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   initializeTheme();
+  setTimeout(() => {
+    document.documentElement.classList.add("transition-enabled");
+  }, 10);
 
   const carousel = document.querySelector("#projCarousel");
   const toggleButton = document.querySelector("#carouselToggle");

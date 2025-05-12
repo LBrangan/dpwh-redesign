@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+  <script>
+    (function () {
+      const savedTheme =
+        localStorage.getItem("theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    })();
+  </script>
+
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="images/Logo.png" />
@@ -20,7 +31,7 @@
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css" /
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <a href="#maincontent" class="skip-link">Skip to main content</a>
@@ -28,6 +39,7 @@
     <nav
       class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
       role="navigation"
+      aria-label="Main navigation"
     >
       <div class="container">
         <a class="navbar-brand" href="#">DPWH</a>
@@ -45,9 +57,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#news">News</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
             </li>
@@ -60,14 +70,14 @@
             id="theme-toggle"
             aria-label="Toggle dark mode"
           >
-            <span class="theme-icon">🌙</span>
+            <span class="theme-icon" aria-hidden="true">🌙</span>
           </button>
         </div>
       </div>
     </nav>
 
     <main id="maincontent">
-      <section class="hero mt-5">
+      <section class="hero mt-5" role="region" aria-label="Welcome message">
         <div class="container">
           <h1 class="display-4">
             Welcome to the Department of Public Works and Highways
@@ -82,17 +92,14 @@
       <header class="header py-md-5 py-sm-5 bg-light" role="banner">
         <div class="container">
           <div class="row align-items-center g-4">
-            <!-- DPWH Logo -->
             <div class="col-md-2 col-12 text-center text-md-start">
               <img
                 src="images/DPWH-Logo.png"
-                alt="Official Logo of the Department of Public Works and Highways"
+                alt="Official DPWH Logo"
                 class="img-fluid"
                 style="max-height: 150px"
               />
             </div>
-
-            <!-- Agency Name and Motto -->
             <div class="col-md-8 col-12 text-center text-md-start">
               <h6 class="mb-1 text-uppercase">Republic of the Philippines</h6>
               <hr class="my-2" />
@@ -104,12 +111,10 @@
                 People
               </p>
             </div>
-
-            <!-- Secretary Image and Name -->
             <div class="col-md-2 col-12 text-center">
               <img
                 src="images/Mr. Bonoan.jpg"
-                alt="Portrait of Secretary Manuel M. Bonoan"
+                alt="Secretary Manuel M. Bonoan portrait"
                 class="img-fluid rounded shadow mb-2"
                 style="max-height: 200px; object-fit: cover"
               />
@@ -120,17 +125,16 @@
         </div>
       </header>
 
-      <!-- News Section with Cards -->
-      <section class="py-5 bg-light" id="news">
+      <section class="py-5 bg-light" id="news" aria-labelledby="news-heading">
         <div class="container">
-          <h2 class="section-title">Latest News</h2>
+          <h2 class="section-title" id="news-heading">Latest News</h2>
           <div class="row g-4" role="list">
             <div class="col-md-6 col-lg-4" role="listitem">
-              <div class="card news-card h-100" tabindex="0">
+              <article class="card news-card h-100" tabindex="0">
                 <img
                   src="images/infrastructure.jpg"
                   class="card-img-top"
-                  alt="DPWH Launches New Infrastructure Initiative"
+                  alt="New infrastructure initiative launched"
                 />
                 <div class="card-body">
                   <h5 class="card-title">New Infrastructure Initiative</h5>
@@ -144,14 +148,14 @@
                     >Read More</a
                   >
                 </div>
-              </div>
+              </article>
             </div>
             <div class="col-md-6 col-lg-4" role="listitem">
-              <div class="card news-card h-100" tabindex="0">
+              <article class="card news-card h-100" tabindex="0">
                 <img
                   src="images/flood.jpg"
                   class="card-img-top"
-                  alt="Flood Mitigation Projects Underway"
+                  alt="Flood mitigation projects in progress"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Flood Mitigation Projects</h5>
@@ -165,44 +169,47 @@
                     >Read More</a
                   >
                 </div>
-              </div>
+              </article>
             </div>
             <div class="col-md-6 col-lg-4" role="listitem">
-              <div class="card news-card h-100" tabindex="0">
+              <article class="card news-card h-100" tabindex="0">
                 <img
                   src="images/roadwork.jpg"
                   class="card-img-top"
-                  alt="Flood Mitigation Projects Underway"
+                  alt="Ongoing roadwork in San Juan"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Roadwork Progress</h5>
                   <p class="card-text">
-                    Improving disaster preparedness and resilience.
+                    Infrastructure improvements in San Juan area.
                   </p>
                   <a
                     href="#"
                     class="btn btn-primary mt-2"
-                    aria-label="Read more about roadwork progress at San Juan "
+                    aria-label="Read more about roadwork progress at San Juan"
                     >Read More</a
                   >
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Services Section -->
-      <section class="py-5 bg-light services" id="services">
+      <section
+        class="py-5 bg-light services"
+        id="services"
+        aria-labelledby="services-heading"
+      >
         <div class="container">
-          <h2 class="section-title">Our Services</h2>
+          <h2 class="section-title" id="services-heading">Our Services</h2>
           <div class="row g-4">
             <div class="col-sm-6 col-lg-4">
-              <div class="card h-100" tabindex="0" style="width: 25rem">
+              <article class="card h-100" tabindex="0" style="width: 25rem">
                 <img
                   src="images/image1.jpg"
                   class="card-img-top img-fluid"
-                  alt=""
+                  alt="Infrastructure development projects"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Infrastructure Development</h5>
@@ -211,11 +218,15 @@
                     projects.
                   </p>
                 </div>
-              </div>
+              </article>
             </div>
             <div class="col-sm-6 col-lg-4">
-              <div class="card h-100" tabindex="0" style="width: 25rem">
-                <img src="images/image2.jpg" class="card-img-top img-fluid" />
+              <article class="card h-100" tabindex="0" style="width: 25rem">
+                <img
+                  src="images/image2.jpg"
+                  class="card-img-top img-fluid"
+                  alt="Maintenance and rehabilitation work"
+                />
                 <div class="card-body">
                   <h5 class="card-title">Maintenance & Rehabilitation</h5>
                   <p class="card-text">
@@ -223,14 +234,14 @@
                     maintenance.
                   </p>
                 </div>
-              </div>
+              </article>
             </div>
             <div class="col-sm-6 col-lg-4">
-              <div class="card h-100" tabindex="0" style="width: 25rem">
+              <article class="card h-100" tabindex="0" style="width: 25rem">
                 <img
                   src="images/image3.png"
                   class="card-img-top img-fluid"
-                  alt=""
+                  alt="Public assistance services"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Public Assistance</h5>
@@ -239,22 +250,21 @@
                     inquiries.
                   </p>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
       <section class="py-5" id="projects" aria-labelledby="projects-heading">
         <div class="container">
           <h2 class="section-title" id="projects-heading">Recent Projects</h2>
           <div
             id="projCarousel"
             class="carousel slide"
-            aria-roledescription="carousel"
             role="region"
-            aria-label="Recent DPWH projects carousel"
+            aria-roledescription="carousel"
+            aria-label="Recent DPWH projects"
           >
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -262,58 +272,54 @@
                   <img
                     src="images/roadwork.jpg"
                     class="d-block w-100 img-fluid"
-                    alt="A road construction site related to the Central Luzon Link Expressway project"
+                    alt="Construction site for Central Luzon Link Expressway project"
                   />
                   <figcaption class="carousel-caption">
                     <h5>DPWH Launches Bridge Rehab in Northern Luzon</h5>
                     <p>
-                      The DPWH reports significant progress in constructing the
-                      CLLEX Phase I, targeting full connectivity between SCTEX
-                      and Maharlika Highway by July 2025.
+                      Significant progress on CLLEX Phase I to connect SCTEX and
+                      Maharlika Highway by July 2025.
                     </p>
                   </figcaption>
                 </figure>
               </div>
-
               <div class="carousel-item">
                 <figure class="m-0">
                   <img
                     src="images/reinforce.jpg"
                     class="d-block w-100 img-fluid"
-                    alt="Flood control construction site in Camarines Sur"
+                    alt="Coastal flood control construction in Camarines Sur"
                   />
                   <figcaption class="carousel-caption">
                     <h5>DPWH Reinforces Coastal Defense in CamSur</h5>
                     <p>
-                      Two flood control structures were built by DPWH to protect
-                      coastal communities in Siruma and Tinambac, Camarines Sur.
+                      Flood control structures protect coastal areas in Siruma
+                      and Tinambac.
                     </p>
                   </figcaption>
                 </figure>
               </div>
-
               <div class="carousel-item">
                 <figure class="m-0">
                   <img
                     src="images/agricamp.jpg"
                     class="d-block w-100 img-fluid"
-                    alt="Proposed site for youth agricultural camp in Palawan"
+                    alt="Proposed youth agricultural camp site in Palawan"
                   />
                   <figcaption class="carousel-caption">
                     <h5>
                       Agricamp Facility for Youth Rehab Underway in Palawan
                     </h5>
                     <p>
-                      DPWH and DSWD kick off the first Agricultural Camp
-                      Facility for youth rehabilitation in Puerto Princesa’s
-                      Iwahig Penal Farm.
+                      Joint DPWH-DSWD project for youth rehabilitation in Iwahig
+                      Penal Farm, Puerto Princesa.
                     </p>
                   </figcaption>
                 </figure>
               </div>
             </div>
 
-            <!-- Carousel Controls -->
+            <!-- Controls -->
             <button
               class="carousel-control-prev"
               type="button"
@@ -345,8 +351,7 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4 text-center">
+    <footer class="bg-dark text-white py-4 text-center" role="contentinfo">
       <div class="container">
         <p class="mb-1">&copy; 2025 Department of Public Works and Highways</p>
         <a href="#" class="text-white me-3" style="text-decoration: none"

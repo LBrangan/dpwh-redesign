@@ -1,391 +1,386 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-  <script>
-    (function () {
-      const savedTheme =
-        localStorage.getItem("theme") ||
-        (window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light");
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    })();
-  </script>
-
+<html>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="images/Logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#ffffff"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#121212"
-    />
+
     <title>DPWH - Redesign</title>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
     </style>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
-  </head>
-  <body>
-    <a href="#maincontent" class="skip-link">Skip to main content</a>
 
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-      role="navigation"
-      aria-label="Main navigation"
+    <link href="src/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="font-montserrat bg-white text-gray-900">
+    <a
+      href="#maincontent"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-blue-600 text-white px-2 py-1 rounded z-50"
+      >Skip to main content</a
     >
-      <div class="container">
-        <a class="navbar-brand" href="#">DPWH</a>
+
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 right-0 bg-blue-900 text-white shadow-md z-40"
+    >
+      <div
+        class="container mx-auto px-4 flex flex-wrap items-center justify-between h-16"
+      >
+        <a href="#" class="text-2xl font-bold tracking-wide">DPWH</a>
         <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          id="navbar-toggler"
+          aria-controls="navbar-menu"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          class="text-white focus:outline-none md:hidden"
         >
-          <span class="navbar-toggler-icon"></span>
+          <!-- Hamburger icon -->
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+          >
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
+
+        <div
+          id="navbar-menu"
+          class="hidden w-full md:flex md:items-center md:w-auto"
+        >
+          <ul class="flex flex-col md:flex-row md:space-x-6 mt-4 md:mt-0">
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-4 hover:text-blue-200 transition-colors"
+                >Home</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+            <li>
+              <a
+                href="#news"
+                class="block py-2 px-4 hover:text-blue-200 transition-colors"
+                >News</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="block py-2 px-4 hover:text-blue-200 transition-colors"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="block py-2 px-4 hover:text-blue-200 transition-colors"
+                >Projects</a
+              >
             </li>
           </ul>
-          <button
-            class="theme-toggle"
-            id="theme-toggle"
-            aria-label="Toggle dark mode"
-          >
-            <span class="theme-icon" aria-hidden="true">🌙</span>
-          </button>
         </div>
       </div>
     </nav>
 
-    <main id="maincontent">
-      <section class="hero mt-5" role="region" aria-label="Welcome message">
-        <div class="container">
-          <h1 class="display-4">
-            Welcome to the Department of Public Works and Highways
-          </h1>
-          <p class="lead">
-            Providing quality infrastructure and public services for the
-            Filipino people.
-          </p>
-        </div>
+    <main id="maincontent" class="pt-20">
+      <!-- Hero -->
+      <section
+        class="mt-5 px-4 container mx-auto"
+        role="region"
+        aria-label="Welcome message"
+      >
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Welcome to the Department of Public Works and Highways
+        </h1>
+        <p class="text-lg text-gray-800 max-w-3xl">
+          Providing quality infrastructure and public services for the Filipino
+          people.
+        </p>
       </section>
 
-      <header class="header py-md-5 py-sm-5 bg-light" role="banner">
-        <div class="container">
-          <div class="row align-items-center g-4">
-            <div class="col-md-2 col-12 text-center text-md-start">
-              <img
-                src="images/DPWH-Logo.png"
-                alt="Official DPWH Logo"
-                class="img-fluid"
-                style="max-height: 150px"
-              />
-            </div>
-            <div class="col-md-8 col-12 text-center text-md-start">
-              <h6 class="mb-1 text-uppercase">Republic of the Philippines</h6>
-              <hr class="my-2" />
-              <h5 class="mb-2 fw-bold text-uppercase">
-                Department of Public Works and Highways
-              </h5>
-              <p class="fw-semibold fst-italic mb-0">
-                Right Project, Right Cost, Right Quality, Right On Time, Right
-                People
-              </p>
-            </div>
-            <div class="col-md-2 col-12 text-center">
-              <img
-                src="images/Mr. Bonoan.jpg"
-                alt="Secretary Manuel M. Bonoan portrait"
-                class="img-fluid rounded shadow mb-2"
-                style="max-height: 200px; object-fit: cover"
-              />
-              <h6 class="mb-0 fw-bold">Manuel M. Bonoan</h6>
-              <p class="mb-0">Secretary</p>
-            </div>
+      <!-- Header Banner -->
+      <header class="bg-gray-50 py-12 mt-10">
+        <div
+          class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
+        >
+          <div class="md:col-span-2 flex justify-center md:justify-start">
+            <img
+              src="images/DPWH-Logo.png"
+              alt="Official DPWH Logo"
+              class="max-h-[150px] object-contain"
+            />
+          </div>
+          <div class="md:col-span-8 text-center md:text-left text-gray-900">
+            <h6 class="uppercase mb-1 font-semibold tracking-wide">
+              Republic of the Philippines
+            </h6>
+            <hr class="border-gray-400 my-2" />
+            <h5 class="uppercase font-bold mb-2 text-xl">
+              Department of Public Works and Highways
+            </h5>
+            <p class="italic font-semibold">
+              Right Project, Right Cost, Right Quality, Right On Time, Right
+              People
+            </p>
+          </div>
+          <div class="md:col-span-2 text-center">
+            <img
+              src="images/Mr. Bonoan.jpg"
+              alt="Secretary Manuel M. Bonoan portrait"
+              class="max-h-[200px] w-full object-cover rounded shadow mb-2"
+            />
+            <h6 class="font-bold">Manuel M. Bonoan</h6>
+            <p>Secretary</p>
           </div>
         </div>
       </header>
 
-      <section class="py-5 bg-light" id="news" aria-labelledby="news-heading">
-        <div class="container">
-          <h2 class="section-title" id="news-heading">Latest News</h2>
-          <div class="row g-4" role="list">
-            <div class="col-md-6 col-lg-4" role="listitem">
-              <article class="card news-card h-100" tabindex="0">
-                <img
-                  src="images/infrastructure.jpg"
-                  class="card-img-top"
-                  alt="New infrastructure initiative launched"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">New Infrastructure Initiative</h5>
-                  <p class="card-text">
-                    Enhancing road connectivity across the country.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary mt-2"
-                    aria-label="Read more about the new infrastructure initiative"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4" role="listitem">
-              <article class="card news-card h-100" tabindex="0">
-                <img
-                  src="images/flood.jpg"
-                  class="card-img-top"
-                  alt="Flood mitigation projects in progress"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Flood Mitigation Projects</h5>
-                  <p class="card-text">
-                    Improving disaster preparedness and resilience.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary mt-2"
-                    aria-label="Read more about flood mitigation projects"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4" role="listitem">
-              <article class="card news-card h-100" tabindex="0">
-                <img
-                  src="images/roadwork.jpg"
-                  class="card-img-top"
-                  alt="Ongoing roadwork in San Juan"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Roadwork Progress</h5>
-                  <p class="card-text">
-                    Infrastructure improvements in San Juan area.
-                  </p>
-                  <a
-                    href="#"
-                    class="btn btn-primary mt-2"
-                    aria-label="Read more about roadwork progress at San Juan"
-                    >Read More</a
-                  >
-                </div>
-              </article>
-            </div>
+      <!-- Latest News -->
+      <section id="news" class="py-10 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 id="news-heading" class="text-3xl font-bold mb-6 text-center">
+            Latest News
+          </h2>
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- News Card 1 -->
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden flex flex-col h-full"
+            >
+              <img
+                src="images/infrastructure.jpg"
+                alt="New infrastructure initiative launched"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4 flex flex-col flex-grow">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  New Infrastructure Initiative
+                </h5>
+                <p class="flex-grow text-gray-800">
+                  Enhancing road connectivity across the country.
+                </p>
+                <a
+                  href="#"
+                  aria-label="Read more about the new infrastructure initiative"
+                  class="mt-4 inline-block bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded transition-colors"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
+
+            <!-- News Card 2 -->
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden flex flex-col h-full"
+            >
+              <img
+                src="images/flood.jpg"
+                alt="Flood mitigation projects in progress"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4 flex flex-col flex-grow">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  Flood Mitigation Projects
+                </h5>
+                <p class="flex-grow text-gray-800">
+                  Improving disaster preparedness and resilience.
+                </p>
+                <a
+                  href="#"
+                  aria-label="Read more about flood mitigation projects"
+                  class="mt-4 inline-block bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded transition-colors"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
+
+            <!-- News Card 3 -->
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden flex flex-col h-full"
+            >
+              <img
+                src="images/roadwork.jpg"
+                alt="Ongoing roadwork in San Juan"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4 flex flex-col flex-grow">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  Roadwork Progress
+                </h5>
+                <p class="flex-grow text-gray-800">
+                  Infrastructure improvements in San Juan area.
+                </p>
+                <a
+                  href="#"
+                  aria-label="Read more about roadwork progress at San Juan"
+                  class="mt-4 inline-block bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded transition-colors"
+                >
+                  Read More
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
+      <!-- Services -->
       <section
-        class="py-5 bg-light services"
         id="services"
         aria-labelledby="services-heading"
+        class="py-10 bg-gray-50"
       >
-        <div class="container">
-          <h2 class="section-title" id="services-heading">Our Services</h2>
-          <div class="row g-4">
-            <div class="col-sm-6 col-lg-4">
-              <article class="card h-100" tabindex="0" style="width: 25rem">
-                <img
-                  src="images/image1.jpg"
-                  class="card-img-top img-fluid"
-                  alt="Infrastructure development projects"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Infrastructure Development</h5>
-                  <p class="card-text">
-                    Planning and execution of road, bridge, and public building
-                    projects.
-                  </p>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <article class="card h-100" tabindex="0" style="width: 25rem">
-                <img
-                  src="images/image2.jpg"
-                  class="card-img-top img-fluid"
-                  alt="Maintenance and rehabilitation work"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Maintenance & Rehabilitation</h5>
-                  <p class="card-text">
-                    Ensuring safe and durable infrastructure through routine
-                    maintenance.
-                  </p>
-                </div>
-              </article>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <article class="card h-100" tabindex="0" style="width: 25rem">
-                <img
-                  src="images/image3.png"
-                  class="card-img-top img-fluid"
-                  alt="Public assistance services"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Public Assistance</h5>
-                  <p class="card-text">
-                    Addressing public concerns and infrastructure-related
-                    inquiries.
-                  </p>
-                </div>
-              </article>
-            </div>
+        <div class="container mx-auto px-4">
+          <h2 id="services-heading" class="text-3xl font-bold mb-6 text-center">
+            Our Services
+          </h2>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden max-w-md mx-auto"
+            >
+              <img
+                src="images/image1.jpg"
+                alt="Infrastructure development projects"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-4">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  Infrastructure Development
+                </h5>
+                <p class="text-gray-800">
+                  Building sustainable and resilient public infrastructure.
+                </p>
+              </div>
+            </article>
+
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden max-w-md mx-auto"
+            >
+              <img
+                src="images/image2.jpg"
+                alt="Disaster risk reduction services"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-4">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  Disaster Risk Reduction
+                </h5>
+                <p class="text-gray-800">
+                  Minimizing risks and impacts of natural disasters.
+                </p>
+              </div>
+            </article>
+
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden max-w-md mx-auto"
+            >
+              <img
+                src="images/image3.jpg"
+                alt="Road maintenance and repair"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-4">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  Road Maintenance
+                </h5>
+                <p class="text-gray-800">
+                  Ensuring safe and reliable road networks.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="py-5" id="projects" aria-labelledby="projects-heading">
-        <div class="container">
-          <h2 class="section-title" id="projects-heading">Recent Projects</h2>
-          <div
-            id="projCarousel"
-            class="carousel slide"
-            role="region"
-            aria-roledescription="carousel"
-            aria-label="Recent DPWH projects"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <figure class="m-0">
-                  <img
-                    src="images/roadwork.jpg"
-                    class="d-block w-100 img-fluid"
-                    alt="Construction site for Central Luzon Link Expressway project"
-                  />
-                  <figcaption class="carousel-caption">
-                    <h5>DPWH Launches Bridge Rehab in Northern Luzon</h5>
-                    <p>
-                      Significant progress on CLLEX Phase I to connect SCTEX and
-                      Maharlika Highway by July 2025.
-                    </p>
-                  </figcaption>
-                </figure>
+      <!-- Projects -->
+      <section
+        id="projects"
+        aria-labelledby="projects-heading"
+        class="py-10 bg-white"
+      >
+        <div class="container mx-auto px-4">
+          <h2 id="projects-heading" class="text-3xl font-bold mb-6 text-center">
+            Our Projects
+          </h2>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden max-w-md mx-auto"
+            >
+              <img
+                src="images/project1.jpg"
+                alt="Metro Manila road expansion project"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-4">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  Metro Manila Road Expansion
+                </h5>
+                <p class="text-gray-800">
+                  Expanding road capacity to ease traffic congestion.
+                </p>
               </div>
-              <div class="carousel-item">
-                <figure class="m-0">
-                  <img
-                    src="images/reinforce.jpg"
-                    class="d-block w-100 img-fluid"
-                    alt="Coastal flood control construction in Camarines Sur"
-                  />
-                  <figcaption class="carousel-caption">
-                    <h5>DPWH Reinforces Coastal Defense in CamSur</h5>
-                    <p>
-                      Flood control structures protect coastal areas in Siruma
-                      and Tinambac.
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-              <div class="carousel-item">
-                <figure class="m-0">
-                  <img
-                    src="images/agricamp.jpg"
-                    class="d-block w-100 img-fluid"
-                    alt="Proposed youth agricultural camp site in Palawan"
-                  />
-                  <figcaption class="carousel-caption">
-                    <h5>
-                      Agricamp Facility for Youth Rehab Underway in Palawan
-                    </h5>
-                    <p>
-                      Joint DPWH-DSWD project for youth rehabilitation in Iwahig
-                      Penal Farm, Puerto Princesa.
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
+            </article>
 
-            <!-- Controls -->
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#projCarousel"
-              data-bs-slide="prev"
-              aria-label="Previous slide"
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden max-w-md mx-auto"
             >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#projCarousel"
-              data-bs-slide="next"
-              aria-label="Next slide"
+              <img
+                src="images/project2.jpg"
+                alt="Flood control system project"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-4">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  Flood Control System
+                </h5>
+                <p class="text-gray-800">
+                  Installing advanced flood control mechanisms.
+                </p>
+              </div>
+            </article>
+
+            <article
+              tabindex="0"
+              class="bg-white rounded shadow-md overflow-hidden max-w-md mx-auto"
             >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+              <img
+                src="images/project3.jpg"
+                alt="Bridge rehabilitation project"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-4">
+                <h5 class="font-semibold text-xl mb-2 text-gray-900">
+                  Bridge Rehabilitation
+                </h5>
+                <p class="text-gray-800">
+                  Repairing and strengthening key bridge infrastructure.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
+
+      <footer class="text-center py-6 text-gray-700 bg-gray-50">
+        &copy; 2024 Department of Public Works and Highways
+      </footer>
     </main>
 
-    <footer class="bg-dark text-white py-4 text-center" role="contentinfo">
-      <div class="container">
-        <p class="mb-1">&copy; 2025 Department of Public Works and Highways</p>
-        <a href="#" class="text-white me-3" style="text-decoration: none"
-          >Privacy Policy</a
-        >
-        <a href="#" class="text-white mb-5" style="text-decoration: none"
-          >Accessibility</a
-        >
-
-        <p class="mt-2 fs-5">Contact Us:</p>
-        <a href="#" class="text-danger mb-5" style="text-decoration: none"
-          >Call:165-02</a
-        >
-        <br />
-        <a href="#" class="text-danger mb-5" style="text-decoration: none"
-          >Cellphone/Viber:09616847084</a
-        >
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-
-    <button id="backToTopBtn" aria-label="Back to top">
-      <i class="bi bi-chevron-up"></i>
-    </button>
+    <script src="main.js"></script>
   </body>
 </html>

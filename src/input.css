@@ -109,14 +109,6 @@ textarea:focus {
   color: #fff;
 }
 
-/* Theme toggle icon (no hover color change) */
-.navbar .theme-toggle:hover,
-.navbar .theme-icon:hover {
-  color: inherit;
-  background-color: transparent;
-  text-decoration: none;
-}
-
 /* Accessible Skip Link */
 .skip-link {
   position: absolute;
@@ -136,26 +128,6 @@ textarea:focus {
   background: #000;
   color: #fff;
   padding: 0.5rem;
-}
-
-/* Card Styling */
-.card {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border-color: var(--border-color);
-  transition: var(--theme-transition);
-  width: 100%;
-  max-width: 100%;
-}
-
-.bg-light {
-  background-color: var(--section-bg) !important;
-  transition: var(--theme-transition);
-}
-
-.bg-dark {
-  background-color: var(--footer-bg) !important;
-  transition: var(--theme-transition);
 }
 
 /* Card Hover Animations */
@@ -195,55 +167,4 @@ img {
   .header img {
     margin-bottom: 1rem;
   }
-}
-
-/* Carousel */
-.carousel-item img {
-  max-height: 500px;
-  object-fit: cover;
-}
-
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.6); /* Better contrast */
-  padding: 1rem;
-  color: #fff;
-  text-align: left;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  outline: none;
-}
-
-.carousel-control-prev:focus,
-.carousel-control-next:focus {
-  box-shadow: 0 0 0 4px #96afd4;
-}
-#carouselToggle:focus {
-  box-shadow: 0 0 0 3px #0d6efd;
-}
-
-#backToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 99;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 12px;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
-}
-
-#backToTopBtn:hover {
-  background-color: #0056b3;
-}
-
-#backToTopBtn i {
-  pointer-events: none;
 }

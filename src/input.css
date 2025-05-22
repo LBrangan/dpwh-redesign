@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+:root {
+  /* Light theme variables */
+  --primary-color: #161179;
+  --text-color: #212529;
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --section-bg: #f8f9fa;
+  --footer-bg: #212529;
+  --footer-text: #ffffff;
+  --border-color: #dee2e6;
+
+  /* Transitions */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Temporarily disable transitions */
+html[data-theme] * {
+  transition: none !important;
+}
+
+html[data-theme].transition-enabled * {
+  transition: var(--theme-transition) !important;
+}
+
+[data-theme="dark"] {
+  --primary-color: #15109b;
+  --text-color: #e9ecef;
+  --bg-color: #121212;
+  --section-bg: #1a1a1a;
+  --card-bg: #252525;
+  --footer-bg: #121212;
+  --footer-text: #e9ecef;
+  --border-color: #495057;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: Montserrat;
+  font-size: clamp(0.95rem, 1vw, 1.125rem);
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--theme-transition);
+}
+
+h1,
+h2,
+.card-title {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+p,
+.card-text {
+  font-size: clamp(0.9rem, 1vw, 1rem);
+}
+
+.hero {
+  background-color: var(--primary-color);
+  color: white;
+  padding: clamp(2rem, 5vw, 4rem) 1rem;
+  text-align: center;
+  transition: var(--theme-transition);
+}
+
+.header hr {
+  border-color: var(--border-color);
+  transition: var(--theme-transition);
+}
+
+.services {
+  background-color: var(--section-bg);
+  transition: var(--theme-transition);
+}
+
+.section-title {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  transition: var(--theme-transition);
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+.navbar a:hover,
+.navbar .nav-link:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar button:hover,
+.navbar button:focus {
+  background-color: #cad9e9;
+  color: #fff;
+}
+
+/* Theme toggle icon (no hover color change) */
+.navbar .theme-toggle:hover,
+.navbar .theme-icon:hover {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Accessible Skip Link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -1;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  z-index: 1000;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+/* Card Styling */
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+  transition: var(--theme-transition);
+  width: 100%;
+  max-width: 100%;
+}
+
+.bg-light {
+  background-color: var(--section-bg) !important;
+  transition: var(--theme-transition);
+}
+
+.bg-dark {
+  background-color: var(--footer-bg) !important;
+  transition: var(--theme-transition);
+}
+
+/* Card Hover Animations */
+.news-card,
+.services .card,
+#projects .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover,
+.services .card:hover,
+#projects .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Image responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  .header .row {
+    text-align: center;
+  }
+
+  .header img {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Carousel */
+.carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6); /* Better contrast */
+  padding: 1rem;
+  color: #fff;
+  text-align: left;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  outline: none;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  box-shadow: 0 0 0 4px #96afd4;
+}
+#carouselToggle:focus {
+  box-shadow: 0 0 0 3px #0d6efd;
+}
+
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: #0056b3;
+}
+
+#backToTopBtn i {
+  pointer-events: none;
+}
